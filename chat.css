@@ -1,0 +1,61 @@
+body {
+	background-color: #d3d3d3;
+	height: 100%;
+}
+
+.FlexContainer {
+  background-color: #d3d3d3;
+  width: 100%;
+}
+
+.FlexItem {
+  background: hsla(0,0%,0%,.1);
+  margin: 1em;
+  width: 500px;
+  height: 800px;
+  padding: 0px;
+}
+
+.title {
+	height: 100px;
+}
+
+.chat {
+	height: 650px;
+	background-color: white;
+	overflow-y: auto;
+	overflow-x: hidden;
+	word-wrap: break-word;
+}
+
+.input_chat {
+	height: 50px;
+}
+
+.title_str {
+	overflow-x: hidden;
+	text-overflow: ellipsis;
+}
+
+.msg_txt {
+	word-wrap: break-word;
+}
+
+.whispered_msg {
+	color: blue;
+}
+
+.selectTargetMsg {
+	max-width: 60px;
+}
+
+.selectTargetMsgInner {
+	max-width: 60px;
+	overflow-x: hidden;
+}
+
+.date {
+	font-style: italic;
+	font-size: smaller;
+	color: grey;
+}

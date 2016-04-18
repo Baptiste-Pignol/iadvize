@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en" ng-app="chatApp">
+<head>
+    <title>Chat</title>
+
+    <!-- lodash -->
+	<script src="node_modules/lodash/lodash.min.js"></script>
+
+	<!-- moment.js -->
+	<script src="node_modules/moment/min/moment.min.js"></script>
+
+    <!-- Angular Material requires Angular.js Libraries -->
+	<script src="node_modules/angular/angular.min.js"></script>
+	<script src="node_modules/angular-animate/angular-animate.min.js"></script>
+	<script src="node_modules/angular-aria/angular-aria.min.js"></script>
+	<script src="node_modules/angular-messages/angular-messages.min.js"></script>
+
+	<!-- Angular Material Library -->
+	<script src="node_modules/angular-material/angular-material.min.js"></script>
+
+    <!-- Angular Material css -->
+    <link rel="stylesheet" href="node_modules/angular-material/angular-material.min.css">
+
+
+    <!-- App js -->
+    <script src="dist/app.min.js"></script>
+    <script src="dist/chat.controller.min.js"></script>
+
+    <!-- App css -->
+    <link rel="stylesheet" href="chat.css">
+</head>
+<body ng-cloak ng-controller="chatCtrl as ctrl">
+	<script>
+	    it('true is true', function(){ expect(true).toEqual(true); });
+	</script>
+	<!-- responsive grid to contains chat -->
+	<div class="FlexContainer" layout layout-wrap layout-padding layout-align="left">
+		<!-- chat -->
+	    <div class="FlexItem md-whiteframe-4dp" ng-repeat="chat in ctrl.chats">
+	    	<!-- title toolbar -->
+	    	<md-toolbar class="md-primary title" layout="row">
+	    		<h2 flex class="title_str">{{chat.getName();}}</h2>
+			    <md-button ng-click="ctrl.exit(chat);" class="md-raised md-primary">Exit</md-button>
+	    	</md-toolbar>
+	    	<!-- message area -->
+	    	<div class="chat" layout='column'>
+	    		<div ng-repeat="msg in chat.getMessages()">
+					<div ng-class="ctrl.getMsgTxtClass(msg);" class="msg_txt"><span><b>{{msg.getAuthor();}}: </b></span>{{msg.getText();}}</div>
+					<div class="date">{{msg.getTime();}}</div>
+	    		</div>
+	    	</div>
+	    	<!-- input area -->
+	    	<div class="input_chat" layout="row">
+	    		<md-input-container class="selectTargetMsg">
+					<md-select ng-model="chat.currentMsgTarget;" aria-label="message target" class="selectTargetMsgInner">
+						<md-option ng-repeat="target in ctrl.getPossibleTargets(chat)" value="{{target}}">
+							{{target}}
+						</md-option>
+					</md-select>
+				</md-input-container>
+	    		<md-input-container md-no-float class="md-block" flex>
+          			<input ng-keydown="ctrl.keySend($event, chat)" ng-model="chat.currentMsgText;" placeholder="Write you amazing message here!">
+        		</md-input-container>
+        		<md-button ng-click="ctrl.send(chat)" class="md-raised md-primary">Send</md-button>
+	    	</div>
+	    </div>
+	    <!-- add chat element -->
+	    <div class="FlexItem">
+	    	<md-button ng-click="ctrl.addChatDialog($event);" class="md-raised md-primary">Add Chat</md-button>
+	    </div>
+	</div>
+</body>
+</html>
