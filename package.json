@@ -3,6 +3,16 @@
   "version": "1.0.0",
   "description": "An amazing full client side chat",
   "main": "chat.html",
+  "homepage": "https://github.com/Baptiste-Pignol/iadvize#readme",
+  "keywords": [
+    "iadvize",
+    "chat",
+    "angular"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Baptiste-Pignol/iadvize.git"
+  },
   "scripts": {
     "test": "gulp test"
   },
