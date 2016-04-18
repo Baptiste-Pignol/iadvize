@@ -16,7 +16,7 @@ gulp
 
 ## usage
 
-launch chat.html with a recent browser.
+launch chat.html with a recent browser (like firefox or google chrome).
 
 ## Chat
 

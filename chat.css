@@ -35,6 +35,7 @@ body {
 .title_str {
 	overflow-x: hidden;
 	text-overflow: ellipsis;
+	margin-left: 10px;
 }
 
 .msg_txt {

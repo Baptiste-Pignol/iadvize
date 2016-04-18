@@ -2,12 +2,12 @@
   "name": "iadvize",
   "version": "1.0.0",
   "description": "An amazing full client side chat",
-  "main": "index.js",
+  "main": "chat.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "gulp test"
   },
-  "author": "",
-  "license": "",
+  "author": "Baptiste-Pignol <https://github.com/Baptiste-Pignol>",
+  "license": "MIT",
   "dependencies": {
     "angular": "^1.5.3",
     "angular-animate": "^1.5.3",
